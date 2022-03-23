@@ -12,8 +12,7 @@ tabledict=table.scan(
 },
 
 )
-# git config --global user.email jabril.mahamud@bp.com
-# git config --global user.name JabrilMahamud
+
 tableList=list(tabledict.items())
 tableResponse=tableList[0][1]
 tableData=[]
