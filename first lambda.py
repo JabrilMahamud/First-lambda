@@ -1,5 +1,6 @@
 from ast import Expression
 import boto3
+import datetime
 
 from __future__ import print_function
 def lambda_handle(event,context):
@@ -7,10 +8,7 @@ def lambda_handle(event,context):
         print(record['account_name'])
         print(record['account'])
         print(record['status'])
-    print('successfully processed % records'%str(len(event['Records'])))
-
-
-
+        print(datetime.datetime.now)
 
 dynamodb =boto3.resource("dynamodb",region_name="eu-west-1")
 table=dynamodb.Table("WH-0001-DYN_METADATA")
