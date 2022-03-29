@@ -1,5 +1,17 @@
 from ast import Expression
 import boto3
+
+from __future__ import print_function
+def lambda_handle(event,context):
+    for record in event['records']:
+        print(record['account_name'])
+        print(record['account'])
+        print(record['status'])
+    print('successfully processed % records'%str(len(event['Records'])))
+
+
+
+
 dynamodb =boto3.resource("dynamodb",region_name="eu-west-1")
 table=dynamodb.Table("WH-0001-DYN_METADATA")
 
