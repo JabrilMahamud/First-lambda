@@ -33,4 +33,7 @@ for i in range(len(tableResponse)):
     tableResponse[i].get('account'),
     tableResponse[i].get('status')])
 
+# def lambda_handler(event, context):
+#     for record in event['Records']:
+#         # get the changes here and save it
 print (tableData)
