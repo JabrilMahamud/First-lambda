@@ -22,7 +22,6 @@ tabledict=table.scan(
         '#AN':'account-name',
         '#S':'status',
 },
-
 )
 
 tableList=list(tabledict.items())
