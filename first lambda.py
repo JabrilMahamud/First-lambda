@@ -1,15 +1,10 @@
 # from ast import Expression
+from asyncore import write
 from time import time
+from unicodedata import name
 import boto3
 import csv
-import datetime
-# def csvWriter(tabledata):
-#     field_names=tabledata[0].keys()
-#     with open(tabledata, 'w', newline='', encoding='utf-8') as csv_file_object:
-#         writer = csv.DictWriter(csv_file_object, fieldnames=field_names)
-#         writer.writeheader()
-#         for row_dict in tabledata:
-#             writer.writerow(row_dict)
+import datetime as dt
 
 # from __future__ import print_function
 # def lambda_handle(event,context):
@@ -19,17 +14,20 @@ import datetime
 #         print(record['status'])
 #         # print(datetime.datetime.now)
 def write2csv(tableList):
-    f=open("test_file.csv","w",newline="")
-    tableList=str(tableData)
-    print(tableList)
-    # f.write(tableList)
+    data = [['Account-name'], ['Account-number'], ['status'],] 
+    file = open('test.csv', 'w+', newline ='') 
+    with file:     
+        write = csv.writer(file) 
+        write.writerows(tableData) 
+    # tableList=str(tableData)
+    # print(tableList)
+    # # f.write(tableList)
     # csv.writer=csv.writer(f)
     # writer.writerow(tableData)
     # f.close(tableList)
 
 dynamodb =boto3.resource("dynamodb",region_name="eu-west-1")
 table=dynamodb.Table("WH-0001-DYN_METADATA")
-
 
 tabledict=table.scan(
     ProjectionExpression="#AN,account,#S",
