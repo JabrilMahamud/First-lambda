@@ -1,7 +1,5 @@
 assuming roles 4 dummies
 
-
-
 1. gitbash in c/Users/(your local user)
 2. source mypython/Scripts/activate
 3. cd C:/awsconnect-win-x64
@@ -9,3 +7,14 @@ assuming roles 4 dummies
 5. paste link into browser
 6. export AWS_DEFAULT_PROFILE=WH-00H1-role_READONLY
 7. for some reason that doesn't work, so copy the new role and paste over default
+
+
+should look somewhat like this:
+[default]
+aws_access_key_id = ASIAWFGUDFSZVFXIVK62
+aws_secret_access_key = DIox538WE6yH5LsGPRUV30W4GVJAtKXLSnMx2JbZ
+aws_session_token = FwoGZXIvYXdzEIn//////////wEaDMxl1Hx3gKhV4PJpOyLJAQbwePvia9eU0kSHzIgclOOPeUZx8nLLqXivroGQGcZ3k9PIXOn8zf1FE3/iDBRQVehvzuHKh3iEZRRJNdluOBNncKMPSYLZG+kWMc8VCHVpWo1tDjRWebfP7QrvFBH90fgxkHN+VBiZF4p4yYZi2hkDYZ6hr/C0PTIXUqPf3Fzzb4kOq6Jqa2sAun6dvNRS1fedwk/S18dK4F6KTTYWm2yz5pzcIo5S2LNgIZj6vgkidBrIK5yA/U38AwLZtFCH7VTZ+6x4T47JECiPrpWSBjItErqj69qSV9eHB78pTV7DXK40zoIBFlxgnsofxJmL2tfT/ZxdojO+b18lzCWS
+[WH-00H1-role_READONLY]
+aws_access_key_id = ASIAWFGUDFSZVFXIVK62
+aws_secret_access_key = DIox538WE6yH5LsGPRUV30W4GVJAtKXLSnMx2JbZ
+aws_session_token = FwoGZXIvYXdzEIn//////////wEaDMxl1Hx3gKhV4PJpOyLJAQbwePvia9eU0kSHzIgclOOPeUZx8nLLqXivroGQGcZ3k9PIXOn8zf1FE3/iDBRQVehvzuHKh3iEZRRJNdluOBNncKMPSYLZG+kWMc8VCHVpWo1tDjRWebfP7QrvFBH90fgxkHN+VBiZF4p4yYZi2hkDYZ6hr/C0PTIXUqPf3Fzzb4kOq6Jqa2sAun6dvNRS1fedwk/S18dK4F6KTTYWm2yz5pzcIo5S2LNgIZj6vgkidBrIK5yA/U38AwLZtFCH7VTZ+6x4T47JECiPrpWSBjItErqj69qSV9eHB78pTV7DXK40zoIBFlxgnsofxJmL2tfT/ZxdojO+b18lzCWS
