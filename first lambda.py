@@ -5,6 +5,8 @@ from unicodedata import name
 import boto3
 import csv
 import datetime as dt
+import tabledata as TableClass
+
 def main():
     dynamodb =boto3.resource("dynamodb",region_name="eu-west-1")
     table=dynamodb.Table("WH-0001-DYN_METADATA")
