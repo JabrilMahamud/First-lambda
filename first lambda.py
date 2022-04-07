@@ -1,4 +1,3 @@
-# from ast import Expression
 from time import time
 import boto3
 import csv
@@ -30,9 +29,6 @@ def main():
         tableResponse[i].get('account'),
         tableResponse[i].get('status')])
 
-    # def lambda_handler(event, context):
-    #     for record in event['Records']:
-    # get the changes here and save it
 
     write2csv(tableData)
 
