@@ -1,14 +1,17 @@
 from time import time
 import boto3
 import csv
-import datetime as dt
+from datetime import datetime
+
 def main():
     dynamodb =boto3.resource("dynamodb",region_name="eu-west-1")
     table=dynamodb.Table("WH-0001-DYN_METADATA")
+    now = datetime.now() # current date and time
+    date_time = now.strftime("%H-%M-%S")
 
     def write2csv(tableList):
         data = [['Account-name'], ['Account-number'], ['status'],] 
-        file = open('test.csv', 'w+', newline ='') 
+        file = open(date_time+'.csv', 'w+', newline ='') 
         with file:     
             write = csv.writer(file) 
             write.writerows(tableData) 
