@@ -1,11 +1,11 @@
-<<<<<<< HEAD
-from asyncore import write
-=======
->>>>>>> fceaa2a9133c16f42a93b3caa39375ac195cfd4d
 from time import time
+from unicodedata import name
 import boto3
 import csv
 from datetime import datetime
+
+dynamoDB=boto3.resource("dynamodb",region_name='eu-west-1')
+table=dynamoDB.Table('WS-Z038_Metadata')
 
 def write2csv(tableList):
     data = [['Account-name'], ['Account-number'], ['status'],] 
@@ -13,7 +13,6 @@ def write2csv(tableList):
     with file:     
         write = csv.writer(file) 
         write.writerows(tableData) 
-
 tabledict=table.scan(
     ProjectionExpression="#AN,account,#S",
     ExpressionAttributeNames={
