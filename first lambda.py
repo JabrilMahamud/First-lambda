@@ -1,5 +1,4 @@
 from time import time
-from unicodedata import name
 import boto3
 import csv
 from datetime import datetime
