@@ -7,16 +7,9 @@ import boto3
 import csv
 from datetime import datetime
 
-def write2csv(tableList):
-    data = [['Account-name'], ['Account-number'], ['status'],] 
-    file = open('test.csv', 'w+', newline ='') 
-    with file:     
-        write = csv.writer(file) 
-        write.writerows(tableData) 
-
     def write2csv(tableList):
         data = [['Account-name'], ['Account-number'], ['status'],] 
-        file = open(date_time+'.csv', 'w+', newline ='') 
+        file = open(datetime+'.csv', 'w+', newline ='') 
         with file:     
             write = csv.writer(file) 
             write.writerows(tableData) 
@@ -37,11 +30,4 @@ def write2csv(tableList):
         tableResponse[i].get('account'),
         tableResponse[i].get('status')])
 
-<<<<<<< HEAD
 write2csv(tableData)
-=======
-
-    write2csv(tableData)
-
-main()
->>>>>>> fceaa2a9133c16f42a93b3caa39375ac195cfd4d
