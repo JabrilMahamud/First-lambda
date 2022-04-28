@@ -5,5 +5,5 @@ assuming roles 4 dummies
 3. cd C:/awsconnect-win-x64
 4. ./awsconnect --role WH-00H1-role_READONLY
 5. paste link into browser
-6. export AWS_DEFAULT_PROFILE=WH-00H1-role_READONLY
+6. export AWS_DEFAULT_PROFILE=WS-Z038-role_OPERATIONS
 7. for some reason that doesn't work, so copy the new role and paste over default
