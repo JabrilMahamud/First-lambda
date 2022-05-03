@@ -5,9 +5,8 @@ dynamoDB=boto3.resource("dynamodb",region_name='eu-west-1')
 table=dynamoDB.Table('WS-Z038_Metadata')
 
 def lambda_handler(event,context):
-    csv_name = 'WS-Z038-'+str(date.today())+'-'+datetime.now().strftime("%H-%M")+'.csv'
+    csv_name = 'MetaData'+str(date.today())+'-'+datetime.now().strftime("%H-%M")+'.csv'
     tableData=[]
-    data = [['Account-name'], ['Account-number'], ['status']] 
     tabledict=table.scan(
         ProjectionExpression="#AN,account,#S",
         ExpressionAttributeNames={
