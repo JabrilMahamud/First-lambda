@@ -4,7 +4,7 @@ import csv
 
 def lambda_handler(event,context):
     csv_name = 'MetaData'+str(date.today())+'-'+datetime.now().strftime("%H-%M")+'.csv'
-    
+    i=0    
     dynamoDB=boto3.resource("dynamodb",region_name='eu-west-1')
     table=dynamoDB.Table('WS-Z038_Metadata')
     tabledict=table.scan(
@@ -39,9 +39,11 @@ def lambda_handler(event,context):
         j+=1
     if foundBucket == False:
         S3_Client.create_bucket(
-            Bucket='Metadata-metadata-bucket',
+            Bucket='metadata-number'+str(i)+'-bucket',
             CreateBucketConfiguration= {
                 'LocationConstraint': 'eu-west-1'
             }        
+            
         )
+        i=i+1
     S3_Client.upload_file('/tmp/'+csv_name,'Metadata-metadata-bucket',csv_name)
