@@ -34,16 +34,16 @@ def lambda_handler(event,context):
 
     j = 0
     while foundBucket == False and j < len(allBuckets) :
-        if allBuckets[j].get('Name') == 'metadata-number'+str(i)+'-bucket':
+        if allBuckets[j].get('Name') == 'ws-z038-metadata-bucket':
             foundBucket = True
         j+=1
     if foundBucket == False:
         S3_Client.create_bucket(
-            Bucket='metadata-number'+str(i)+'-bucket',
+            Bucket='ws-z038-metadata-bucket',
             CreateBucketConfiguration= {
                 'LocationConstraint': 'eu-west-1'
             }        
             
         )
-    S3_Client.upload_file('/tmp/'+csv_name,'metadata-number'+str(i)+'bucket',csv_name)
+    S3_Client.upload_file('/tmp/'+csv_name,'ws-z038-metadata-bucket',csv_name)
     i=i+1
