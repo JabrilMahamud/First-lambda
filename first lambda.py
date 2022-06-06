@@ -46,4 +46,3 @@ def lambda_handler(event,context):
             
         )
     S3_Client.upload_file('/tmp/'+csv_name,'ws-z038-metadata-bucket',csv_name)
-    i=i+1
