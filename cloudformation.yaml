@@ -3,8 +3,8 @@ Resources:
     Type: "AWS::DynamoDB::Table"
     Properties:
       KeySchema:
-        - AttributeName: "*"
-          KeyType: "*"
+        - AttributeName: ""
+          KeyType: ""
   ThisServicePolicy:
     Type: "AWS::IAM::ManagedPolicy"
     Properties:
