@@ -2,11 +2,11 @@ import boto3
 from datetime import date,datetime
 import csv
 
-def lambda_handler(event,context):
-    csv_name = 'MetaData'+str(date.today())+'-'+datetime.now().strftime("%H-%M")+'.csv'
-    i=0    
+def lambda_handler(event,context,callback):
     dynamoDB=boto3.resource("dynamodb",region_name='eu-west-2')
     table=dynamoDB.Table('Metadatajson')
+    csv_name = 'MetaData'+str(date.today())+'-'+datetime.now().strftime("%H-%M")+'.csv'
+    i=0    
     tabledict=table.scan(
         ProjectionExpression="#AN,account,#S",
         ExpressionAttributeNames={
