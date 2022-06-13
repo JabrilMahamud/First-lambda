@@ -17,6 +17,23 @@ Resources:
           Action:
             - sts:AssumeRole
       Path: "/"
+      Version: '2012-10-17'
+      Statement:
+      - Sid: ListAndDescribe
+        Effect: Allow
+        Action:
+        - dynamodb:List*
+        Resource: "*"
+      - Sid: MetadataJson
+        Effect: Allow
+        Action:
+        - dynamodb:BatchGet*
+        - dynamodb:DescribeStream
+        - dynamodb:DescribeTable
+        - dynamodb:Get*
+        - dynamodb:Query
+        - dynamodb:Scan
+        Resource: arn:aws:dynamodb:*:*:table/MetadataJson
       Policies:
       - PolicyName: LambdaFunctionPolicy
         PolicyDocument:
