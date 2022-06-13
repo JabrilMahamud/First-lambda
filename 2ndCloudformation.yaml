@@ -28,13 +28,12 @@ Resources:
               - logs:CreateLogStream
               - logs:PutLogEvents
             Resource: '*'
-
   LambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
       Runtime: python3.7
       Timeout: 5
-      Handler: index.handler
+      Handler: index.lambda_handler
       Role: !GetAtt LambdaFunctionRole.Arn
       Code:
         ZipFile:
