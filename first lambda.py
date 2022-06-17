@@ -4,7 +4,7 @@ import csv
 
 def lambda_handler(event,context,callback):
     dynamoDB=boto3.resource("dynamodb",region_name='eu-west-2')
-    table=dynamoDB.Table('Metadatajson')
+    table=dynamoDB.Table('MetadataJson')
     csv_name = 'MetaData'+str(date.today())+'-'+datetime.now().strftime("%H-%M")+'.csv'
     i=0    
     tabledict=table.scan(
