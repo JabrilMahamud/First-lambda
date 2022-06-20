@@ -37,7 +37,7 @@ Resources:
             Resource: 
             - arn:aws:dynamodb:eu-west-2:251045990954:table/MetadataJson
             - arn:aws:lambda:eu-west-2:251045990954:function:Stack-10-LambdaFunction-HUcUFXbCq4ZJ
-            - arn:aws:s3:::dbmetadata
+            - arn:aws:s3:::dbmetadata/
             - '*'
   LambdaFunction:
     Type: AWS::Lambda::Function
