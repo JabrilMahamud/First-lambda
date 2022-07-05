@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >
-  This CloudFormation template creates simple Lambda functions,
-  which prints CloudFormation resource Arn from the stack.  
+  saves account-name,account, and status from a dynamodb database to an s3
 
 Resources:
   LambdaFunctionRole:
